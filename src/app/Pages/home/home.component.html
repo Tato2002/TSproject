@@ -1,0 +1,48 @@
+
+<!-- <app-carousel></app-carousel> -->
+
+<ngb-carousel [showNavigationArrows]="false" [pauseOnHover]="false" [pauseOnFocus]="false">
+  <ng-template ngbSlide *ngFor="let image of imageArray">
+      <div class="carousel-wrapper">
+          <img [src]="image.imgUrl" [alt]="image.imgAlt">
+
+      </div>
+  </ng-template>
+</ngb-carousel>
+
+<main>
+  <h1 class="text-center text-white mb-5">Get to know the rules<br>
+    &<br>
+    conditions</h1>
+  <div class="container" mt-5>
+    <div><a>1</a> - Registration and access to the site cost is:<br>
+      Author of the idea: 2.99 $<br>
+      Investor: 11.99 $
+  </div>
+  </div>
+
+  <div class="container">
+    <div><a>2</a> - This platform serves Authors of ideas copyrighted in the patent. A person without copyright cannot post an idea.</div>
+  </div>
+
+  <div class="container">
+    <div><a>3</a> - Personal and banking data of users are confidential and protected.</div>
+  </div>
+
+  <div class="container">
+    <div><a>4</a> - Only the author of the idea can post the idea!<br>
+      Cost per month!<br>
+  1 month = 14.99 $<br>
+  12 months = 5.99 $<br>
+  24 months = 2.99 $<br>
+  </div>
+  </div>
+
+  <div class="container">
+    <div><a>5</a> - The ad will be removed: due to failure to sell the idea, find a business partner, or pay the ad placement fee.</div>
+  </div>
+
+  <div class="container" style="margin-bottom: 200px;">
+    <div><a>6</a> - The author of the idea has the right to sell and implement the idea.</div>
+  </div>
+  </main>

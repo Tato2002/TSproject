@@ -1,0 +1,111 @@
+footer .container-fluid{
+  display: flex;
+  flex-wrap:wrap;
+  width: 80%;
+}
+
+
+footer .container-fluid .about {
+  border-radius: 4px;
+  padding: 10px;
+  color: #ffff;
+  background-color: rgb(106, 90, 205, 0.25);
+  margin-bottom: 10px;
+}
+footer .container-fluid .about .innerabout {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: rgba(255, 166, 0, 0.258);
+}
+footer .container-fluid .info {
+  border-radius: 4px;
+  color: #ffff;
+  background-color: rgb(106, 90, 205, 0.25);
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+footer .container-fluid .info img {
+  width: 30px;
+}
+footer h1 img {
+  width: 200px;
+}
+
+.special1 {
+  width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid rgba(255, 166, 0, 0.863);
+}
+.special2 {
+  width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid rgba(255, 166, 0, 0.863);
+}
+
+.special {
+  border: 2px solid ghostwhite;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.rights {
+  color: rgba(255, 255, 255, 0.608);
+}
+@media only screen and (max-width:359px){
+  .pgmail{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width:305px){
+  footer .container-fluid .about {
+   font-size: 12px;
+  }
+  footer .container-fluid .info {
+    font-size: 15px;
+  }
+  footer .container-fluid{
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+  }
+}
+.githubRelative {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+}
+
+.githubRelative img {
+  position: absolute;
+  left: -39px;
+  top: -10px;
+  background: white;
+  border-radius: 50%;
+  width: 35px;
+}
+
+.linkedinRelative {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+}
+
+.linkedinRelative img {
+  position: absolute;
+  left: -39px;
+  top: -8px;
+  background: white;
+  border-radius: 4px;
+  width: 35px;
+}
+
+

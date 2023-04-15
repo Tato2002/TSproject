@@ -1,0 +1,65 @@
+
+
+ .CardIdea {
+  margin: auto;
+  margin-top: 150px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 60px;
+  text-align: center;
+  margin-bottom: 100px;
+  }
+   .CardIdea .flex article {
+    width: 250px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    background-color: rgb(106, 90, 205, 0.25);;
+  }
+   .CardIdea .flex article img{
+    width: 100%;
+  }
+
+   .CardIdea .flex article .text {
+    padding: 0 20px 20px;
+    height: 250px;
+    overflow: hidden;
+    overflow-y: scroll;
+    color: white;
+  }
+  .CardIdea .flex article .text h4 {
+    background-color: rgba(153, 68, 232, 0.234);
+  }
+
+   .CardIdea .flex article .text > button {
+    border-radius: 10px;
+    font-size: 14px;
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 15px;
+    width: fit-content;
+    margin-top: 10px;
+    }
+
+     .CardIdea .flex article .text > button:hover {
+    font-size: 17px;
+    border-radius: 17px;
+    color: black;
+    background: whitesmoke;
+    border: 0;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    }
+     .CardIdea .flex article .text button a {
+      text-decoration: none;
+      color: whitesmoke;
+      font-weight: bolder;
+    }
+     .CardIdea .flex article .text button a:hover {
+      color: black;
+      font-weight: bolder;
+    }

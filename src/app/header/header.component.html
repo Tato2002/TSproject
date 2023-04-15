@@ -1,0 +1,53 @@
+
+<header>
+  <div  class="container">
+
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-3">
+        <div class="logo">
+          <a routerLink="home"><img src="/assets/images/logo.png"></a>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-9 col-sm-9 col-9 text-end">
+
+
+      <div class="menu_icon" [class.menu_iconClass]="menu_icon_variable" (click)="openMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+
+
+        <div class="menu" [class.menuClass]="menuVariable">
+          <ul>
+            <li routerLink="">Main</li>
+            <li routerLink="login">LogIn</li>
+            <li routerLink="registration">Registration</li>
+            <li class="topnav-li">
+              <a class="topnav-link">More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/></svg>
+             </a>
+              <div class="dropdown">
+                <a style="padding-bottom: 6px;" routerLink="top-ideas" >Top-Ideas</a>
+                <hr style="padding: 0; margin: 0;">
+                <a style="padding-bottom: 6px;" routerLink="share-own-idea">Share Own<br>Idea</a>
+                <hr style="padding: 0; margin: 0;">
+                <a style="padding-bottom: 6px;" routerLink="more">More</a>
+              </div>
+            </li>
+            <li class="profile" routerLink="profile"><img src="/assets/images/profile.jpg" alt="profile"></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+

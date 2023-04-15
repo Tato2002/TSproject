@@ -1,0 +1,150 @@
+
+
+ header{
+      padding:12px 0;
+      background-color: #222;
+}
+header .container .row .logo img {
+      height: 40px;
+      border-radius: 5px;
+   }
+header .container .row .menu{
+      margin-top: 3px;
+      }
+header .container .row .menu ul{
+      padding: 0;
+      margin:0;
+        }
+header .container .row .menu ul li{
+          list-style-type: none;
+          display: inline-block;
+          margin-left: 24px;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+header .container .row .menu ul .profile img{
+          height: 35px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+header .container .row .menu ul li {
+          list-style: none;
+          color: #ffffff;
+        }
+        .menu ul li hover{
+          color: #e9c62c;
+          cursor: pointer;
+          transition: 0.4s ease-in-out;
+        }
+
+        .dropdown {
+          position: absolute;
+          width: 100%;
+          background: #222;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          font-size: 15px;
+          display: none;
+          top: 80px;
+        }
+
+        .dropdown a {
+          color: whitesmoke;
+          cursor: pointer;
+        }
+        .dropdown a:hover {
+            color: dimgray;
+          background-color: ghostwhite;
+        }
+        .topnav-li {
+          list-style: none;
+          position: relative;
+        }
+
+        .topnav-li:hover .dropdown {
+          position: absolute;
+          display: flex;
+          width: 100px;
+          right: -10px;
+          top: 20px;
+          padding: 5px;
+          padding-top: 20px;
+          z-index: 10;
+        }
+        .topnav-link {
+          color: #0e9d88;
+          text-decoration: none;
+        }
+        .topnav-link:hover {
+          color: #565C82;
+        }
+
+
+ @media only screen and (max-width: 999px){
+
+header .container .row .menu{
+          position: fixed;
+          right: -280px;
+          top:64;
+          width: 280px;
+          height: 100%;
+          background: #222;
+          transition: 0.4s ease-in-out;
+          z-index: 5;
+        }
+header .container .row .menu ul li {
+          display: block;
+          text-align: left;
+          margin: 0;
+          padding: 10px 0 10px 26px;
+          border-bottom: 1px solid #312f2f;
+        }
+ header .container .row .menu_icon{
+          position: absolute;
+          right: 38px;
+          top: 23px;
+          z-index: 7;
+        }
+
+header .container .row .menu_icon span {
+          width: 32px;
+          height: 3px;
+          background: #ffffff;
+          display: block;
+          transition: 0.2s ease-in-out;
+        }
+header .container .row .menu_icon span:nth-child(2) {
+          margin: 4px 0;
+        }
+header .container .row .menu_iconClass span:nth-child(2){
+        display: none;
+        }
+header .container .row .menu_iconClass span:nth-child(1){
+          transform: rotate(40deg);
+        }
+header .container .row .menu_iconClass span:nth-child(3){
+          transform: rotate(-40deg);
+          margin-top: -3px;
+        }
+
+header .container .row .menuClass{
+        right: 0;
+        transition: 0.4s ease-in-out;
+        }
+ .topnav-li:hover .dropdown {
+          position: absolute;
+          display: flex;
+          width: 100px;
+          right: 135px;
+          top: 30px;
+          padding-top: 20px;
+        }
+        }
+
+@media only screen and (max-width:350px){
+  header .container .row .logo img {
+    height: 30px;
+    margin-top: 3px;
+ }
+}

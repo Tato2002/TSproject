@@ -1,0 +1,17 @@
+
+<h1 class="text-center mb-5 mt-5">Top Ideas</h1>
+
+  <div class="CardIdea">
+    <main class="flex" *ngFor="let i of cardsOfIdea">
+      <article>
+        <img src="{{i.image}}" alt="easy img">
+        <div class="text">
+          <h4>ID: {{i.id}}<br>{{i.title}} </h4><br>
+          <p> {{i.description}} </p>
+          <p>RATING: {{i.rating}} </p>
+          <button><a>CHAT</a></button>
+        </div>
+      </article>
+      </main>
+  </div>
+

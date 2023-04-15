@@ -1,0 +1,145 @@
+
+.container1{
+  width: 80%;
+  margin: auto;
+  height: 100vh;
+  background-color: rgba(188, 143, 143, 0.444);
+  margin-bottom: 220px;
+}
+.container1 .container{
+  position: relative;
+  width: 100%;
+}
+.container .forPicture {
+  background-color: rosybrown;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+}
+.container .forPicture .profile {
+    position: absolute;
+    height: 250px;
+    border-radius: 50%;
+    border: 10px solid white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 35%;
+}
+.container h3 {
+  padding-top: 315px;
+}
+.container .profileImgs{
+  width: fit-content;
+  margin: auto;
+}
+.container .profileImgs .githubImg {
+  background-color: white;
+  padding: 4px;
+  border-radius: 4px;
+}
+.container .profileImgs a {
+  text-decoration: none;
+  border: none;
+}
+.container .profileImgs a:not(:last-child) {
+  margin-right: 15px;
+}
+.container .profileImgs a img {
+  height: 55px;
+}
+.container .profileImgs img:not(:last-child){
+  margin-right: 50px;
+}
+
+.container1 .container .footer{
+  border-radius: 4px;
+  position: absolute;
+  bottom: -180px;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(170, 78, 78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aboutMe, .myProject, .chat {
+  text-align: center;
+}
+.aboutMe, .myProject, .chat:not(:last-child) {
+    margin-right: 100px;
+}
+
+.container1 .container .footer span a {
+  text-decoration: none;
+  color: #fff;
+}
+.container1 .container .footer span {
+  width: 90px;
+  height: 80px;
+}
+.container1 .container .footer .aboutMe {
+  position: relative;
+  overflow: hidden;
+}
+.container1 .container .footer .aboutMe:hover {
+  overflow: unset;
+  z-index: 10;
+}
+
+.container1 .container .footer span p{
+  width: 275px;
+  background-color: #fff;
+  padding: 4px;
+  position: absolute;
+  left: -91px;
+  top: 103px;
+  color: goldenrod;
+}
+.container1 .container .footer span img {
+  height: 60px;
+}
+
+@media only screen and (max-width:580px){
+  .container .forPicture .profile {
+    height: 250px;
+}
+.aboutMe, .myProject, .chat:not(:last-child) {
+    margin-right:0px;
+}
+.container1 .container .footer span {
+  display: block;
+  margin: auto;
+  margin-bottom: 28px;
+}
+.container1 .container .footer {
+  bottom: -400px;
+  display: unset;
+  height: fit-content;
+}
+}
+
+@media only screen and (max-width:422px){
+  .container1 {
+    width: 100%;
+  }
+  .container .forPicture .profile {
+    height: 200px;
+    top: 20%;
+}
+  .container .profileImgs {
+    width: 80px;
+    margin: auto;
+  }
+  .container .profileImgs img {
+    height: fit-content;
+    width: 70px;
+  }
+  .container .profileImgs img:not(:last-child){
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+}

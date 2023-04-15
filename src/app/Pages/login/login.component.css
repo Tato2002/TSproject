@@ -1,0 +1,50 @@
+form {
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+  width: 300px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 90px;
+}
+
+
+input[type="text"],input[type="password"] {
+  font-size: 17px;
+    width: 240px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    width: 80px;
+    height: 40px;
+    font-size: 15px;
+    color: ghostwhite;
+    border-radius: 12px;
+    background-color: rgb(0, 55, 183, 0.5);
+    border: none;
+}
+input[type="submit"]:hover {
+    color: whitesmoke;
+    font-weight: bolder;
+    background-color: royalblue;
+    border-radius: 22px;
+    font-size: 17px;
+     width: 90px;
+    height: 40px;
+    transition: 1s;
+}
+
+.forPass {
+  position: relative;
+ }
+
+ .eyeicon {
+  position: absolute;
+  right: 42px;
+    top: 43px;
+  color: black;
+ }
+

@@ -1,0 +1,94 @@
+<form (submit)="submit($event, registerForm)" #registerForm="ngForm">
+
+  <div class="container">
+    <div class="forIam">
+      <label for="category">author/investor</label> <br>
+    <select name="category" id="category" ngModel #category="ngModel" required>
+       <option selected disabled>I am an?</option>
+       <option>author</option>
+       <option>investor</option>
+    </select>
+    <p class="IamValidation text-danger" *ngIf="!category.valid && category.touched">Required</p>
+    </div><br>
+
+    <div class="forCountry">
+      <label for="country">country</label><br>
+    <select name="country" id="country" ngModel #country="ngModel" required>
+       <option selected disabled>I am from?</option>
+       <option value="{{country.code}}" *ngFor="let country of IamFrom">{{country.name}}</option>
+    </select>
+    <p class="countryValidation text-danger" *ngIf="!country.valid && country.touched">Required</p>
+    </div><br>
+
+    <div class="forFirstname">
+      <label for="firstname">Firstname</label><br>
+         <input type="text" name="firstname" id="firstname" ngModel #firstname="ngModel" required>
+         <p class="firstnameValidation text-danger" *ngIf="!firstname.valid && firstname.touched">Required</p>
+    </div>
+ <br>
+
+<div class="forLastname">
+  <label for="">Lastname</label><br>
+  <input type="text" name="lastname" id="lastname" ngModel #lastname="ngModel" required><br><br>
+  <p class="lastnameValidation text-danger" *ngIf="!lastname.valid && lastname.touched">Required</p>
+</div>
+
+  <label for="gender">Sex</label><br>
+ <div class="forGender">
+      <input type="radio" name="gender" value="male" ngModel #gender="ngModel" required> Male
+      <input type="radio" name="gender" value="female" ngModel #gender="ngModel" required style="margin-left: 25px;"> female
+</div><br>
+
+
+<div class="forEmail">
+  <label for="email">Email</label><br>
+<input type="text" name="email" id="email" ngModel #email="ngModel" required><br><br>
+<p class="emailValidation text-danger" *ngIf="!email.valid && email.touched">Required</p>
+</div>
+
+<div class="forPassword">
+  <label for="password">password</label><br>
+<input [type]="changetype?'password':'text'" name="password" id="password" ngModel #password="ngModel" required minlength="4"><br><br>
+<span class="eyeicon" (click)="viewPass()"><i [ngClass]="visible?'bi bi-eye-slash':'bi bi-eye'"></i></span>
+<p class="passwordValidation text-danger" *ngIf="!password.valid && password.touched" >Required</p>
+<p class="passwordValidation2 text-danger" *ngIf="password.errors?.['minlength']">Min-length should be 4</p>
+</div>
+
+<div class="forDate">
+  <label for="date">Date of birth</label><br>
+<input type="date" name="date" id="date" ngModel #date="ngModel" required ><br><hr class="new1">
+<p class="dateValidation text-danger" *ngIf="!date.valid && date.touched">Required</p>
+</div>
+
+<label for="forId">verification:<br>Upload ID's front side</label><br>
+
+<div class="forId" *ngIf="!IdFront">
+ <img src="/assets/images/frontadd.png">
+ <input id="IdFront"  type="file" (change)="getFile($event)"  required
+ [(ngModel)]="formInfo.IdFront" [ngModelOptions]="{standalone: true}" >
+</div>
+<hr class="new1">
+<div  *ngIf="IdFront">
+  <h4 class="text-white text-center">File:<a class="text-success">{{IdFront.name}}</a></h4>
+  <button class="btn btn-warning" (click)="IdFront = undefined">clear file</button>
+</div>
+<hr class="new1">
+
+<label for="email">Bank account</label><br>
+ <div class="forBankAcc">
+  <i class="bi bi-credit-card"></i>
+ <input type="text" name="bank" id="bank" ngModel #bankAcc="ngModel" required placeholder="GE**BG*********"><br><br>
+ <p class="bankAccValidation text-danger" *ngIf="!bankAcc.valid && bankAcc.touched">Required</p>
+</div>
+
+  <div class="checkbox">
+   <input type="checkbox" id="agree" name="agree" ngModel #AgreeTermsConditions="ngModel" required>
+   <label for="agree">I agree terms & conditions</label>
+</div><br><br>
+
+   <input type="submit" value="Register" [disabled]="!registerForm.valid">
+  </div>
+</form>
+
+
+

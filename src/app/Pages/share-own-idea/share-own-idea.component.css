@@ -1,0 +1,53 @@
+.CardIdea {
+  margin: auto;
+  margin-top: 120px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-bottom: 240px;
+  background-color: rgba(65, 105, 225, 0.373);
+  padding: 50px 0px;
+  border-radius: 16px;
+  outline: 5px solid rgba(188, 143, 143, 0.611);
+  border: 5px solid rgba(255, 255, 255, 0.445);
+  outline-offset: 5px;
+  }
+   .CardIdea .flex article {
+    width: 250px;
+    height: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    background-color: rgb(106, 90, 205, 0.25);;
+    overflow: hidden;
+  }
+   .CardIdea .flex article img{
+    width: 100%;
+  }
+
+   .CardIdea .flex article .text {
+    padding: 0 20px 20px;
+    height: 250px;
+    color: white;
+  }
+  .CardIdea .flex article .text input {
+    width: 200px;
+    font-size: 17px;
+  }
+  .CardIdea .flex article .text h4 {
+    background-color: rgba(153, 68, 232, 0.234);
+  }
+
+  @media only screen and (max-width:301px) {
+    .CardIdea {
+      outline: unset;
+      outline-offset: unset;
+      padding: 5px 0px;
+      border: none;
+      }
+      .CardIdea .flex article{
+        border-radius: 4px;
+      }
+  }
+

@@ -1,0 +1,41 @@
+main {
+  width: 85%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+main .container {
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(106, 90, 205, 0.25);
+  margin-bottom: 40px;
+  color: white;
+  border-radius: 12px;
+}
+main .container div a {
+font-weight: 900;
+ color: rgb(42, 165, 79);
+ font-size: 20px;
+}
+
+
+.carousel-wrapper {
+  margin: auto;
+  margin-top: 90px;
+  width: 500px;
+  height: 300px;
+  z-index: -9;
+}
+.carousel-wrapper img {
+  width: 100%;
+  z-index: -9;
+}
+
+
+@media only screen and (max-width:500px) {
+  .carousel-wrapper {
+    width: 270px;
+    height: 180px;
+  }
+}
+
