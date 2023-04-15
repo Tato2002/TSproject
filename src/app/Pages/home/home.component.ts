@@ -9,19 +9,19 @@ export class HomeComponent {
 
   imageArray = [
     {
-      imgUrl:"/src/assets/idea1.jpg",
+      imgUrl:"/assets/idea1.jpg",
       imgAlt:"idea1"
     },
     {
-      imgUrl:"/src/assets/idea2.jpg",
+      imgUrl:"/assets/idea2.jpg",
       imgAlt:"idea2"
     },
     {
-      imgUrl:"/src/assets/idea3.jpg",
+      imgUrl:"/assets/idea3.jpg",
       imgAlt:"idea3"
     },
     {
-      imgUrl:"/src/assets/idea4.jpg",
+      imgUrl:"/assets/idea4.jpg",
       imgAlt:"idea4"
     }
   ]
