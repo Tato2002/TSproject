@@ -59,6 +59,9 @@
   .videoPlayer {
     display: block;
   }
+  .videoPlayer .buttons {
+    margin-left: 0px;
+  }
 }
 
 @media only screen and (max-width:495px) {
