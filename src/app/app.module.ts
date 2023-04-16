@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 //import { HttpClientModule } from '@angular/common/http';
-import { APP_BASE_HREF } from '@angular/common';
-import { Inject } from '@angular/core';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,11 +39,9 @@ import { ShareOwnIdeaComponent } from './Pages/share-own-idea/share-own-idea.com
     NgbModule,
     FormsModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/your-value/'}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(@Inject(APP_BASE_HREF) private baseHref:string) {
-    console.log(this.baseHref);
-  }
+
 }
