@@ -40,7 +40,7 @@ import { ShareOwnIdeaComponent } from './Pages/share-own-idea/share-own-idea.com
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue : '/your-value/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
