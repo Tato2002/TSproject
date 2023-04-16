@@ -2,7 +2,7 @@
 .container1{
   width: 80%;
   margin: auto;
-  height: 100vh;
+  height: 850px;
   background-color: rgba(188, 143, 143, 0.444);
   margin-bottom: 220px;
 }
@@ -137,8 +137,6 @@
   .container .profileImgs img {
     height: fit-content;
     width: 70px;
-  }
-  .container .profileImgs img:not(:last-child){
     margin-right: 0px;
     margin-bottom: 30px;
   }
