@@ -13,6 +13,7 @@ form {
  margin-bottom: 400px;
  margin-top: 50px;
  padding-bottom: 10px;
+ overflow: hidden;
 }
 form .container {
   padding-top: 10px;
@@ -75,6 +76,7 @@ form .container .forGender input[type=radio] {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  overflow: hidden;
 }
 input[type=file] {
   position: absolute;
@@ -103,14 +105,20 @@ input[type=file] {
 }
  input[type=checkbox] {
   position: absolute;
-  left: -120px;
+  left: -112px;
   bottom: 5px;
+  background-color: rgb(182, 125, 18);
+  color: white;
  }
 
  label[for=agree]{
   margin-top: 10px;
   border: 2px solid white;
  }
+  input[type=date] {
+    color: rgb(0, 98, 255);
+    width: 100%;
+  }
 
  input[type=submit] {
   background-color: #50c8889c;
@@ -138,7 +146,7 @@ input[type=submit]:disabled:hover{
 
  @media only screen and (max-width:400px){
   form {
-    width: 300px;
+    width: 280px;
   }
   form .container {
     width: 100%;

@@ -63,7 +63,7 @@
 <label for="forId">verification:<br>Upload ID's front side</label><br>
 
 <div class="forId" *ngIf="!IdFront">
- <img src="/assets/frontadd.png">
+ <img src="assets/images/frontadd.png">
  <input id="IdFront"  type="file" (change)="getFile($event)"  required
  [(ngModel)]="formInfo.IdFront" [ngModelOptions]="{standalone: true}" >
 </div>
