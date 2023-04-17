@@ -9,7 +9,7 @@ export class HomeComponent {
 
   imageArray = [
     {
-      imgUrl:"https://w.forfun.com/fetch/05/05eeb93a2e41734ecb6044146351f11e.jpeg",
+      imgUrl:"https://static.vecteezy.com/system/resources/thumbnails/002/206/128/small/money-idea-icon-free-vector.jpg",
       imgAlt:"idea1"
     },
     {
