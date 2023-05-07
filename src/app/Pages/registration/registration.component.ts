@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from 'src/app/shared/auth.service';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -10,10 +11,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class RegistrationComponent implements OnInit {
 
+ngOnInit(): void {}
+constructor(private auth: AuthService){}
 
 
-    ngOnInit(): void {
-    }
+
 
 
 
@@ -270,26 +272,34 @@ export class RegistrationComponent implements OnInit {
       }
 
       formInfo = {
-        firstname:'',
-        lastname:'',
+        username:'',
         category:'',
         country:'',
-        gender:'',
-        email:'',
-        password:'',
-        date:'',
-        IdFront:'',
-        bankAcc:''
+        // email:'',
+        // password:'',
+        date:''
       }
 
-      AgreeTermsConditions:boolean = false;
+      email:string = '';
+      password:string = '';
 
-      IdFront:any;
-      getFile(event:any){
-      this.IdFront = event.target.files[0]
-      console.log('file',this.IdFront);
-    }
+      register() {
+        if(this.email == ''){
+          alert('Please enter email')
+          return;
+        }
+        if(this.password == ''){
+          alert('Please enter password')
+          return;
+        }
 
+        this.auth.register(this.email,this.password);
+         this.email = '';
+         this.password = '';
+      }
+
+
+    AgreeTermsConditions = false;
 
 
       viewPass(){

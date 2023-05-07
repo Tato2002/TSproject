@@ -13,7 +13,7 @@ export class HomeComponent {
       imgAlt:"idea1"
     },
     {
-      imgUrl:"assets/images/idea2.jpg",
+      imgUrl:"assets/images/idea2.webp",
       imgAlt:"idea2"
     },
     {

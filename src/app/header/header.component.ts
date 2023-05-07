@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
+
+
+  register(){
+    this.auth.logout();
+  }
+
   menu_icon_variable: boolean = false;
   menuVariable: boolean = false;
+
   ngOnInit(): void {
   }
   openMenu() {

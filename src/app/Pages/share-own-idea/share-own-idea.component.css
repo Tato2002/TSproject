@@ -1,42 +1,37 @@
-.CardIdea {
-  margin: auto;
-  margin-top: 120px;
-  width: 90%;
+.container {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.CardIdea {
+  margin-top: 120px;
+  width: fit-content;
+  margin: auto;
   text-align: center;
-  margin-bottom: 240px;
-  background-color: rgba(65, 105, 225, 0.373);
-  padding: 50px 0px;
-  border-radius: 16px;
-  outline: 5px solid rgba(188, 143, 143, 0.611);
-  border: 5px solid rgba(255, 255, 255, 0.445);
-  outline-offset: 5px;
+  margin-bottom: 10px;
   }
-   .CardIdea .flex article {
+   .CardIdea .flex form {
     width: 250px;
-    height: 400px;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     background-color: rgb(106, 90, 205, 0.25);;
-    overflow: hidden;
   }
-   .CardIdea .flex article img{
+   .CardIdea .flex form img{
     width: 100%;
   }
 
-   .CardIdea .flex article .text {
+   .CardIdea .flex form .text {
     padding: 0 20px 20px;
     height: 250px;
     color: white;
   }
-  .CardIdea .flex article .text input {
+  .CardIdea .flex form .text input {
     width: 200px;
     font-size: 17px;
   }
-  .CardIdea .flex article .text h4 {
+
+  .CardIdea .flex form .text h4 {
     background-color: rgba(153, 68, 232, 0.234);
+
   }
 
   @media only screen and (max-width:301px) {
@@ -46,8 +41,64 @@
       padding: 5px 0px;
       border: none;
       }
-      .CardIdea .flex article{
+      .CardIdea .flex form{
         border-radius: 4px;
       }
   }
+/* ////////////////////////////////////////////////////////////////// */
 
+.CardIdea2 {
+  margin-top: 120px;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+  }
+  .CardIdea2 textarea {
+    overflow: hidden;
+  }
+.CardIdea2 .flex article {
+  height: 533px;
+    width: 250px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    background-color: rgb(106, 90, 205, 0.25);;
+  }
+   .CardIdea2 .flex article img{
+    width: 100%;
+  }
+
+  .CardIdea2 .flex article button {
+      margin-left:165px;
+      margin-bottom: 5px;
+  }
+
+
+   .CardIdea2 .flex article .text {
+    padding: 0 20px 20px;
+    color: white;
+  }
+
+  .CardIdea2 .flex article .text h4 {
+    background-image: url('https://www.shutterstock.com/image-illustration/triangle-solid-black-golden-illustration-260nw-1862937556.jpg');
+    padding: 10px;
+    background-size: cover;
+    /* background-color: rgba(153, 68, 232, 0.234); */
+  }
+  .CardIdea2 .flex article .text p {
+    width: fit-content;
+    height: 60px;
+    overflow: hidden;
+  }
+
+  @media only screen and (max-width:301px) {
+    .CardIdea2 {
+      outline: unset;
+      outline-offset: unset;
+      padding: 5px 0px;
+      border: none;
+      }
+      .CardIdea2 .flex article{
+        border-radius: 4px;
+      }
+  }

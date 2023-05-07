@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-//import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,8 @@ import { ProfileComponent } from './Pages/profile/profile.component';
 import { ShareOwnIdeaComponent } from './Pages/share-own-idea/share-own-idea.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,10 +37,23 @@ import { ShareOwnIdeaComponent } from './Pages/share-own-idea/share-own-idea.com
   ],
   imports: [
     BrowserModule,
-    //HttpClientModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyC_-fvEORHIqGWgXw849uvOS-bf06HRcrw",
+      authDomain: "idea-42fac.firebaseapp.com",
+      databaseURL: "https://idea-42fac-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "idea-42fac",
+      storageBucket: "idea-42fac.appspot.com",
+      messagingSenderId: "851880676026",
+      appId: "1:851880676026:web:670f4f4f4ae63771325083",
+      measurementId: "G-2LZYCPGGVG"
+    }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

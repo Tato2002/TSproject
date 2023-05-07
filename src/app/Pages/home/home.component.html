@@ -1,7 +1,8 @@
 
 <!-- <app-carousel></app-carousel> -->
 
-<ngb-carousel [showNavigationArrows]="false" [pauseOnHover]="false" [pauseOnFocus]="false">
+<ngb-carousel
+ [showNavigationArrows]="false" [pauseOnHover]="false" [pauseOnFocus]="false">
   <ng-template ngbSlide *ngFor="let image of imageArray">
       <div class="carousel-wrapper">
           <img [src]="image.imgUrl" [alt]="image.imgAlt">

@@ -10,7 +10,7 @@ import { ShareOwnIdeaComponent } from './Pages/share-own-idea/share-own-idea.com
 
 const routes: Routes = [
   {path:'top-ideas', component:TopIdeasComponent},
-  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'registration', component:RegistrationComponent},
   {path:'login', component:LoginComponent},
