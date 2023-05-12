@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
+import { IdeaCustomReg } from './MODELS/customReg';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
@@ -11,8 +14,11 @@ import { AuthService } from 'src/app/shared/auth.service';
 @Injectable()
 export class RegistrationComponent implements OnInit {
 
-ngOnInit(): void {}
-constructor(private auth: AuthService){}
+ngOnInit(): void {
+  this.getAllUsers()
+  setTimeout(() => { this.ngOnInit() }, 1000)
+}
+constructor(private auth: AuthService, private http:HttpClient){}
 
 
 
@@ -269,16 +275,17 @@ constructor(private auth: AuthService){}
       submit(event:Event, form: NgForm) {
         event.preventDefault();
         console.log(form.value)
+        this.userRegistered(form.value)
       }
 
-      formInfo = {
-        username:'',
-        category:'',
-        country:'',
-        // email:'',
-        // password:'',
-        date:''
-      }
+      // formInfo = {
+      //   username:'',
+      //   category:'',
+      //   country:'',
+      //   // email:'',
+      //   // password:'',
+      //   date:''
+      // }
 
       email:string = '';
       password:string = '';
@@ -309,4 +316,48 @@ constructor(private auth: AuthService){}
 
       visible:boolean = true;
       changetype:boolean = true;
+
+
+      fireBase = 'https://idea-custom-reg-default-rtdb.europe-west1.firebasedatabase.app/Ideas.json';
+ideas:IdeaCustomReg[] = []
+
+
+
+/////////////////////////////////////////////////////////////
+
+// constructor(private http:HttpClient){}
+
+userRegistered(idea: IdeaCustomReg){
+  // console.log(idea);
+  this.http.post(this.fireBase, idea)
+  .subscribe((_response) => {
+    // console.log(response)
+  })
+}
+
+
+getAllUsers(){
+  this.http.get<{[key: string]: IdeaCustomReg}>(this.fireBase)
+  .pipe(map((res) => {
+    const ideas = []
+      for (const key in res) {
+          let idea: IdeaCustomReg = {
+            username: res[key].username,
+            country: res[key].country,
+            email:res[key].email,
+            password:res[key].password,
+            category:res[key].category,
+            date:res[key].date,
+            agree:res[key].agree,
+            id: key
+          }
+          ideas.push(idea)
+        }
+        return ideas;
+      })).subscribe((response) => {
+        // console.log(response);
+        this.ideas = response;
+      })
+
+}
     }

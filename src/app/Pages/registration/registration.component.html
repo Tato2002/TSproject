@@ -1,8 +1,8 @@
 <div class="container-fluid">
-  <form (submit)="submit($event, registerForm)" #registerForm="ngForm">
+  <form (submit)="submit($event, registerForm)" #registerForm="ngForm" (ngSubmit)="registerForm.reset()">
 
     <div class="container">
-      <!-- <div class="forIam">
+      <div class="forIam">
         <label for="category">author/investor</label> <br>
       <select name="category" id="category" ngModel #category="ngModel" required>
          <option selected disabled>I am an?</option>
@@ -10,23 +10,23 @@
          <option>investor</option>
       </select>
       <p class="IamValidation text-danger" *ngIf="!category.valid && category.touched">Required</p>
-      </div><br> -->
+      </div><br>
 
-      <!-- <div class="forCountry">
+      <div class="forCountry">
         <label for="country">country</label><br>
       <select name="country" id="country" ngModel #country="ngModel" required>
          <option selected disabled>I am from?</option>
          <option value="{{country.code}}" *ngFor="let country of IamFrom">{{country.name}}</option>
       </select>
       <p class="countryValidation text-danger" *ngIf="!country.valid && country.touched">Required</p>
-      </div><br> -->
-<!--
+      </div><br>
+
       <div class="forFirstname">
         <label for="firstname">Username</label><br>
            <input type="text" name="username" id="username" ngModel #username="ngModel" required>
            <p class="firstnameValidation text-danger" *ngIf="!username.valid && username.touched">Required</p>
       </div>
-   <br> -->
+   <br>
 
   <div class="forEmail">
     <label for="email">Email</label><br>
@@ -41,8 +41,8 @@
   <!-- <p class="passwordValidation text-danger" *ngIf="!password.valid && password.touched" >Required</p>
   <p class="passwordValidation2 text-danger" *ngIf="password.errors?.['minlength']">Min-length should be 4</p> -->
   </div>
-<!--
-  <div class="forDate">
+
+  <!-- <div class="forDate">
     <label for="date">Date of birth</label><br>
   <input type="date" name="date" id="date" ngModel #date="ngModel" required ><br>
   <p class="dateValidation text-danger" *ngIf="!date.valid && date.touched">Required</p>
@@ -50,12 +50,12 @@
 
   <hr class="new1">
 
-    <!-- <div class="checkbox">
-     <input type="checkbox" id="agree" name="agree" ngModel #AgreeTermsConditions="ngModel" required>
-     <label for="agree">I agree terms &<br> conditions(click)</label>
-  </div><br><br> -->
+    <div class="checkbox">
+     <input type="checkbox"  id="agree" name="agree" ngModel #AgreeTermsConditions="ngModel" required>
+     <label for="agree" class="btn btn-secondary">I agree terms &<br> conditions(click)</label>
+  </div><br><br>
 
-     <input type="submit" value="Register" routerLink="../login" (click)="register()" [disabled]="!registerForm.valid">
+     <input type="submit" value="Register" routerLink="../login" (click)="register(); getAllUsers()" [disabled]="!registerForm.valid">
     </div>
   </form>
 

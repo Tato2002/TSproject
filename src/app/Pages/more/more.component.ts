@@ -8,11 +8,11 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class MoreComponent {
 
-  url:string = "https://www.youtube.com/embed/uYRq60G5XTk"
-  url1:string = "https://www.youtube.com/embed/G0dzLanYW1E"
-  url2:string = "https://www.youtube.com/embed/B216ETbvJxc"
-  url3:string = "https://www.youtube.com/embed/Ys8dnY06fNE"
-  url4:string = "https://www.youtube.com/embed/zlljnJSTuZA"
+  url:string = "https://www.youtube.com/embed/G0dzLanYW1E";
+  url1:string = "https://www.youtube.com/embed/uYRq60G5XTk";
+  url2:string = "https://www.youtube.com/embed/B216ETbvJxc";
+  url3:string = "https://www.youtube.com/embed/Ys8dnY06fNE";
+  url4:string = "https://www.youtube.com/embed/zlljnJSTuZA";
 
   urlSafe: SafeResourceUrl | undefined;
 

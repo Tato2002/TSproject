@@ -28,7 +28,7 @@ ngOnInit():void {
 constructor(private http:HttpClient){}
 
 ideaCreated(idea: Idea){
-  console.log(idea);
+  // console.log(idea);
   this.http.post(this.fireBase, idea)
   .subscribe((_response) => {
     // console.log(response)
