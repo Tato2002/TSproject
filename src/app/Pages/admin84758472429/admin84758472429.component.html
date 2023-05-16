@@ -1,12 +1,12 @@
 
-<h1 class="text-center mb-5 mt-5" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/482/58/519/leaves-plants-neon-hd-wallpaper-preview.jpg');">Share My Own Idea</h1>
+<h1 class="text-center mb-5 mt-5" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/482/58/519/leaves-plants-neon-hd-wallpaper-preview.jpg');">ADMIN-PAGE</h1>
 
 
 
   <div class="container">
     <div class="CardIdea">
       <main class="flex">
-        <form #ideaForm="ngForm" (ngSubmit)="ideaSend(ideaForm.value); ideaForm.reset()">
+        <form #ideaForm="ngForm" (ngSubmit)="ideaAdded(ideaForm.value); ideaForm.reset()">
           <div class="forImg">
             <img src="https://png.pngtree.com/png-vector/20190828/ourmid/pngtree-light-bulb-icon-vector-light-bulb-ideas-symbol-illustration-png-image_1715627.jpg" alt="">
            </div>
@@ -14,27 +14,28 @@
           <div class="text">
             <h4><input type="text" name="IName" ngModel placeholder="Name Of Your Idea"></h4><br>
             <p> <textarea name="IDesc" ngModel id="" cols="20" rows="4" placeholder="Description Of Your Idea"></textarea>  </p>
-            <input class="btn btn-success" type="submit" value="Send On Review">
+            <input class="btn btn-success" type="submit" value="Add Idea" (click)="getAllIdeas()">
           </div>
         </form>
         </main>
     </div>
 
 
-    <!-- <div class="CardIdea2" *ngFor="let idea of ideas; index as i">
+    <div class="CardIdea2" *ngFor="let idea of ideas; index as i">
       <main class="flex">
         <article>
           <div class="forImg">
             <img src="{{img}}">
            </div>
-           <h3 class="text-center">My Project: {{i + 1}}</h3>
+           <h3 class="text-center">Idea: {{i + 1}}</h3>
            <hr class="new1">
           <div class="text">
             <h4>{{idea.IName}}</h4><br>
             <p> {{idea.IDesc}}</p>
           </div>
+          <button class="btn btn-primary" (click)="onIdeaApprove(idea)" (click)="onIdeaDelete(idea.id)">APPROVE</button>
           <button class="btn btn-danger" (click)="onIdeaDelete(idea.id)">DELETE</button>
         </article>
         </main>
     </div>
-  </div> -->
+  </div>

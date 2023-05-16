@@ -13,28 +13,28 @@ export class TopIdeasComponent {
       title:"Business Idea",
       description:"The idea is placed among the selected ideas, because according to the analytical evaluation, in case of implementation, it is distinguished by its earning potential. The idea is not subject to sale. Offer a partner % and leave a contact number. The application will be removed due to failure to find a business partner or payment of the platform fee.",
       rating:4.69,
-      image:"https://static.vecteezy.com/system/resources/thumbnails/002/206/128/small/money-idea-icon-free-vector.jpg"
+      image:"https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-light-bulb-icon-vector--light-bulb-ideas-symbol-illustration-png-image_1694700.jpg"
     },
     {
       id:2,
       title:"Business Idea",
       description:"The idea is placed among the selected ideas, because according to the analytical evaluation, in case of implementation, it is distinguished by its earning potential. The idea is not subject to sale. Offer a partner % and leave a contact number. The application will be removed due to failure to find a business partner or payment of the platform fee.",
       rating:9.69,
-      image:"https://us.123rf.com/450wm/hironicons/hironicons2007/hironicons200701024/152162237-brainstorming-creative-idea-icon-beautiful-design-and-fully-editable-vector-for-commercial-print.jpg?ver=6"
+      image:"https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-light-bulb-icon-vector--light-bulb-ideas-symbol-illustration-png-image_1694700.jpg"
     },
     {
       id:3,
       title:"Business Idea",
       description:"The idea is placed among the selected ideas, because according to the analytical evaluation, in case of implementation, it is distinguished by its earning potential. The idea is not subject to sale. Offer a partner % and leave a contact number. The application will be removed due to failure to find a business partner or payment of the platform fee.",
       rating:6.79,
-      image:"https://media.istockphoto.com/id/1062118552/vector/bulb-lamp-idea.jpg?s=170667a&w=0&k=20&c=BdthTkyCDyincHN2UidtwxXs-2b1M3gxFcLqKlPXck0="
+      image:"https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-light-bulb-icon-vector--light-bulb-ideas-symbol-illustration-png-image_1694700.jpg"
     },
     {
       id:4,
       title:"Business Idea",
       description:"The idea is placed among the selected ideas, because according to the analytical evaluation, in case of implementation, it is distinguished by its earning potential. The idea is not subject to sale. Offer a partner % and leave a contact number. The application will be removed due to failure to find a business partner or payment of the platform fee.",
       rating:9.9,
-      image:"https://static.vecteezy.com/system/resources/thumbnails/002/206/128/small/money-idea-icon-free-vector.jpg"
+      image:"https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-light-bulb-icon-vector--light-bulb-ideas-symbol-illustration-png-image_1694700.jpg"
     },
     {
       id:5,
@@ -48,7 +48,7 @@ export class TopIdeasComponent {
       title:"Business Idea",
       description:"The idea is placed among the selected ideas, because according to the analytical evaluation, in case of implementation, it is distinguished by its earning potential. The idea is not subject to sale. Offer a partner % and leave a contact number. The application will be removed due to failure to find a business partner or payment of the platform fee.",
       rating:4.69,
-      image:"https://us.123rf.com/450wm/hironicons/hironicons2007/hironicons200701024/152162237-brainstorming-creative-idea-icon-beautiful-design-and-fully-editable-vector-for-commercial-print.jpg?ver=6",
+      image:"https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-light-bulb-icon-vector--light-bulb-ideas-symbol-illustration-png-image_1694700.jpg"
     },
     {
       id:7,

@@ -44,7 +44,7 @@ font-weight: 900;
 }
 ngb-carousel {
   background-image: url("src/assets/images/lamp.jpg");
-
+  border-bottom: 1px solid white;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;

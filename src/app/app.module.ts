@@ -18,6 +18,8 @@ import { LoginComponent } from './Pages/login/login.component';
 import { MoreComponent } from './Pages/more/more.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { ShareOwnIdeaComponent } from './Pages/share-own-idea/share-own-idea.component';
+import { CommonIdeasComponent } from './Pages/common-ideas/common-ideas.component';
+import { Admin84758472429Component } from './Pages/admin84758472429/admin84758472429.component';
 
 
 
@@ -33,7 +35,9 @@ import { ShareOwnIdeaComponent } from './Pages/share-own-idea/share-own-idea.com
     LoginComponent,
     MoreComponent,
     ProfileComponent,
-    ShareOwnIdeaComponent
+    ShareOwnIdeaComponent,
+    CommonIdeasComponent,
+    Admin84758472429Component
   ],
   imports: [
     BrowserModule,
