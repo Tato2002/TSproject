@@ -1,6 +1,5 @@
 <div class="container-fluid">
-  <form (submit)="submit($event, registerForm)" #registerForm="ngForm" (ngSubmit)="registerForm.reset()">
-
+  <form (submit)="submit($event, registerForm)" #registerForm="ngForm" (ngSubmit)="registerForm.reset();customRegistration()">
     <div class="container">
       <div class="forIam">
         <label for="category">author/investor</label> <br>
@@ -55,7 +54,7 @@
      <label for="agree" class="btn btn-secondary">I agree terms &<br> conditions(click)</label>
   </div><br><br>
 
-     <input type="submit" value="Register" routerLink="../login" (click)="register(); getAllUsers()" [disabled]="!registerForm.valid">
+     <input type="submit" value="Register" routerLink="../login" (click)="register();" [disabled]="!registerForm.valid">
     </div>
   </form>
 

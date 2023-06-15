@@ -11,8 +11,7 @@
 }
 
 form {
-  background-color: rgb(51, 60, 117, 0.5);
-  /* background-color: rgba(128, 128, 128, 0.463); */
+  background-color: rgba(0, 0, 0, 0.586);
   border-radius: 5px;
  font-weight: bolder;
  font-size: 16px;

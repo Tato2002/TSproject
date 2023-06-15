@@ -1,10 +1,8 @@
 export interface IdeaCustomReg {
   username:string;
-  category:any;
-  country:any;
+  category:string;
+  country:string;
   email:string;
   password:string;
-  date:any;
-  agree:boolean;
-  id?:string;
+  agree:string;
 }

@@ -22,6 +22,10 @@ div a{
 }
 
 form {
+  background-color: rgba(0, 0, 0, 0.586);
+  padding: 10px;
+  border-radius: 12px;
+
   background-size: cover;
   text-align: center;
   align-items: center;

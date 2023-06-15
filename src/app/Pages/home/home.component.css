@@ -11,11 +11,14 @@ main {
   border-top-left-radius: 14px;
 }
 
+h1 {
+  text-shadow: 2px 2px 2px black;
+}
+
 main .container {
   padding: 10px;
   text-align: center;
-  /* background-color: rgba(105, 90, 205, 0.489); */
-  background-color: rgba(128, 128, 128, 0.588);
+  background-color: rgba(128, 128, 128, 0.895);
   margin-bottom: 40px;
   color: white;
   border-radius: 12px;

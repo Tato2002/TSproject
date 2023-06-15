@@ -11,6 +11,7 @@ export class SHAREDService {
   sendIdeaApprove(){
     this.subject.next(null);
   }
+
   getApproveEvent():Observable<any>{
     return this.subject.asObservable();
   }

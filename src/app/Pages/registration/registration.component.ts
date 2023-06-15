@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 import { IdeaCustomReg } from './MODELS/customReg';
 import { HttpClient } from '@angular/common/http';
+import {SHAREDService} from './../shared.service';
 import { map } from 'rxjs';
 
 @Component({
@@ -14,12 +15,14 @@ import { map } from 'rxjs';
 @Injectable()
 export class RegistrationComponent implements OnInit {
 
+  firebaseCustomReg = 'https://idea-42fac-default-rtdb.europe-west1.firebasedatabase.app/CstmRegistr.json';
+
+
 ngOnInit(): void {
-  this.getAllUsers()
+  // this.getAllUsers()
   setTimeout(() => { this.ngOnInit() }, 1000)
 }
 constructor(private auth: AuthService, private http:HttpClient){}
-
 
 
 
@@ -275,22 +278,13 @@ constructor(private auth: AuthService, private http:HttpClient){}
       submit(event:Event, form: NgForm) {
         event.preventDefault();
         console.log(form.value)
-        this.userRegistered(form.value)
       }
-
-      // formInfo = {
-      //   username:'',
-      //   category:'',
-      //   country:'',
-      //   // email:'',
-      //   // password:'',
-      //   date:''
-      // }
 
       email:string = '';
       password:string = '';
 
       register() {
+        // this.customRegistration(this.ideas)
         if(this.email == ''){
           alert('Please enter email')
           return;
@@ -318,46 +312,39 @@ constructor(private auth: AuthService, private http:HttpClient){}
       changetype:boolean = true;
 
 
-      fireBase = 'https://idea-custom-reg-default-rtdb.europe-west1.firebasedatabase.app/Ideas.json';
-ideas:IdeaCustomReg[] = []
+     // fireBase = 'https://idea-custom-reg-default-rtdb.europe-west1.firebasedatabase.app/Ideas.json';
+      ideas:IdeaCustomReg[] = []
 
 
-
-/////////////////////////////////////////////////////////////
-
-// constructor(private http:HttpClient){}
-
-userRegistered(idea: IdeaCustomReg){
-  // console.log(idea);
-  this.http.post(this.fireBase, idea)
+customRegistration(){
+  this.http.post(this.firebaseCustomReg, this.ideas)
   .subscribe((_response) => {
-    // console.log(response)
   })
 }
 
 
-getAllUsers(){
-  this.http.get<{[key: string]: IdeaCustomReg}>(this.fireBase)
-  .pipe(map((res) => {
-    const ideas = []
-      for (const key in res) {
-          let idea: IdeaCustomReg = {
-            username: res[key].username,
-            country: res[key].country,
-            email:res[key].email,
-            password:res[key].password,
-            category:res[key].category,
-            date:res[key].date,
-            agree:res[key].agree,
-            id: key
-          }
-          ideas.push(idea)
-        }
-        return ideas;
-      })).subscribe((response) => {
-        // console.log(response);
-        this.ideas = response;
-      })
 
-}
+// customRegistration(custom: IdeaCustomReg){
+//   //this.http.get<{[key: string]: IdeaCustomReg}>(this.firebaseCustomReg)
+//   this.http.post(this.firebaseCustomReg, custom)
+//   .pipe(map((res) => {
+//     const ideas = []
+//       for (const key in res) {
+//           let idea: IdeaCustomReg = {
+//             username: res[key].username,
+//             country: res[key].country,
+//             email:res[key].email,
+//             password:res[key].password,
+//             category:res[key].category,
+//             agree:res[key].agree
+//           }
+//           ideas.push(idea)
+//         }
+//         return ideas;
+//       })).subscribe((response) => {
+//         // console.log(response);
+//         this.ideas = response;
+//       })
+
+// }
     }

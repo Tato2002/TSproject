@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Admin } from './MODELS/admin';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
-import {SHAREDService} from './../shared.service'
+import {SHAREDService} from './../shared.service';
 
 @Component({
   selector: 'app-admin84758472429',

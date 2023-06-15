@@ -22,10 +22,6 @@ export class LoginComponent implements OnInit{
   visible:boolean = true;
   changetype:boolean = true;
 
-  // submitInfo = {
-  //   email:'',
-  //   password:''
-  // }
 
   email:string = '';
   password:string = '';
