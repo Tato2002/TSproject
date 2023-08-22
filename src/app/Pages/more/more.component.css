@@ -16,7 +16,6 @@ h3 {
   border: 5px solid white;
   border-radius: 10px;
   background-color: rgb(106, 90, 205, 0.25);
-  outline: 10px solid rgba(255, 255, 255, 0.384);
   outline-offset: 15px;
 }
 
@@ -65,13 +64,6 @@ h3 {
   }
   .videoPlayer .buttons {
     margin-left: 0px;
-  }
-}
-
-@media only screen and (max-width:495px) {
-  .videoPlayer {
-    outline: unset;
-    outline-offset: unset
   }
 }
 @media only screen and (max-width:455px) {

@@ -1,4 +1,8 @@
-<h1 class="text-center mb-5 mt-5" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/482/58/519/leaves-plants-neon-hd-wallpaper-preview.jpg');">Common Ideas</h1>
+<h1 class="text-center mb-5 mt-5">Common Ideas</h1>
+
+<div class="container d-flex align-items-center justify-content-center" *ngIf="isLoading" style="height: 600px;">
+  <app-loading-spinner></app-loading-spinner>
+</div>
 
   <div class="container">
     <div class="CardIdea2" *ngFor="let idea of ideas; index as i">

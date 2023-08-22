@@ -3,11 +3,12 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 .container-fluid {
-  background-image: url('https://static.wixstatic.com/media/fe4a5d_231f0b4d187d4684a7f5cc559262b6ca~mv2.gif');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   padding: 70px 0px;
+  margin-bottom:130px;
+  margin-top: 80px;
 }
 
 form {
@@ -18,13 +19,10 @@ form {
  width: fit-content;
  height: fit-content;
  margin: auto;
- /* margin-bottom: 400px; */
- /* margin-top: 50px; */
  padding-bottom: 10px;
  overflow: hidden;
 }
 form .container {
-  /* padding-top: 10px; */
   width: 400px;
   position: relative;
   }
@@ -36,7 +34,6 @@ form input, label {
 }
 form .container label[for=agree] {
   font-size: 14px;
- /* color: rosybrown; */
   border: 2px solid white;
 }
 
@@ -76,28 +73,44 @@ form .container select[name=country] {
     width: 100%;
   }
 
- input[type=submit] {
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  .switching-btn {
+    background-color: #50c8889c;
+  color: white;
+  height: 30px;
+  width: fit-content;
+  margin: auto;
+  border-radius: 4px;
+  border: none;
+  }
+
+ .submit-btn {
   background-color: #50c8889c;
   color: black;
   height: 30px;
   width: 110px;
-  margin: 0;
+  margin: auto;
   border-radius: 4px;
 }
-input[type=submit]:hover{
+.submit-btn:hover{
   color: whitesmoke;
   font-weight: bolder;
   background-color: rgba(51, 60, 117, 0.784);
   box-shadow: 6px 9px 20px #50c8889c;
   border: none;
 }
-input[type=submit]:disabled{
+.submit-btn:disabled{
   background-color: #c876509c;
 }
-input[type=submit]:disabled:hover{
-  background-color: #c876509c;
+.submit-btn:disabled:hover{
   box-shadow: unset;
   color: black;
+  font-weight: 100;
 }
 
  @media only screen and (max-width:400px){
@@ -133,15 +146,6 @@ input[type=submit]:disabled:hover{
   font-size: 20px;
  }
 /*************************validations********************************************* */
- .forFirstname{
-  position: relative;
- }
- .firstnameValidation {
-  position: absolute;
-  bottom: -12px;
-  left: 10px;
- }
-
  .forEmail{
   position: relative;
  }
@@ -209,3 +213,4 @@ input[type=submit]:disabled:hover{
     background-size: cover;
   }
 }
+

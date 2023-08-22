@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireModule } from '@angular/fire/compat'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +10,6 @@ import { TopIdeasComponent } from './Pages/top-ideas/top-ideas.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RegistrationComponent } from './Pages/registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './Pages/login/login.component';
 import { MoreComponent } from './Pages/more/more.component';
@@ -20,6 +17,9 @@ import { ProfileComponent } from './Pages/profile/profile.component';
 import { ShareOwnIdeaComponent } from './Pages/share-own-idea/share-own-idea.component';
 import { CommonIdeasComponent } from './Pages/common-ideas/common-ideas.component';
 import { Admin84758472429Component } from './Pages/admin84758472429/admin84758472429.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 
 
@@ -31,13 +31,14 @@ import { Admin84758472429Component } from './Pages/admin84758472429/admin8475847
     TopIdeasComponent,
     FooterComponent,
     HomeComponent,
-    RegistrationComponent,
     LoginComponent,
     MoreComponent,
     ProfileComponent,
     ShareOwnIdeaComponent,
     CommonIdeasComponent,
-    Admin84758472429Component
+    Admin84758472429Component,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -45,21 +46,8 @@ import { Admin84758472429Component } from './Pages/admin84758472429/admin8475847
     AppRoutingModule,
     NgbModule,
     FormsModule,
-
-    AngularFireAuthModule,
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyC_-fvEORHIqGWgXw849uvOS-bf06HRcrw",
-      authDomain: "idea-42fac.firebaseapp.com",
-      databaseURL: "https://idea-42fac-default-rtdb.europe-west1.firebasedatabase.app",
-      projectId: "idea-42fac",
-      storageBucket: "idea-42fac.appspot.com",
-      messagingSenderId: "851880676026",
-      appId: "1:851880676026:web:670f4f4f4ae63771325083",
-      measurementId: "G-2LZYCPGGVG"
-    }),
-
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

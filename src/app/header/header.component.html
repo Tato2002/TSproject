@@ -22,24 +22,23 @@
 
         <div class="menu" [class.menuClass]="menuVariable">
           <ul>
-            <li routerLink="home">Main</li>
-            <li routerLink="common-ideas">CMN-IDEAS</li>
-            <li routerLink="top-ideas" style="color: gold;">TOP-IDEAS</li>
-             <li (click)="register()">Logout</li>
+            <li routerLink="/home">Main</li>
+            <li routerLink="/common-ideas" *ngIf="isAuthenticated">CMN-IDEAS</li>
+            <li routerLink="/top-ideas" style="color: gold;" *ngIf="isAuthenticated">TOP-IDEAS</li>
+            <li *ngIf="isAuthenticated" (click)="onLogout()">Logout</li>
             <li class="topnav-li">
               <a class="topnav-link">More
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
                 <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/></svg>
              </a>
               <div class="dropdown">
-                <!-- <a style="padding-bottom: 6px;" routerLink="top-ideas" >Top-Ideas</a>
-                <hr style="padding: 0; margin: 0;"> -->
-                <a style="padding-bottom: 6px;" routerLink="share-own-idea">Share Own<br>Idea</a>
+                <a style="padding-bottom: 6px;" routerLink="/share-own-idea" *ngIf="isAuthenticated">Share Own<br>Idea</a>
                 <hr style="padding: 0; margin: 0;">
-                <a style="padding-bottom: 6px;" routerLink="more">More</a>
+                <a style="padding-bottom: 6px;" routerLink="/more">More</a>
               </div>
             </li>
-            <li class="profile" routerLink="profile"><img src="assets/images/profile.jpg" alt="profile"></li>
+            <li routerLink="/auth" *ngIf="!isAuthenticated">Authenticate</li>
+            <li class="profile" routerLink="profile" *ngIf="isAuthenticated"><img src="assets/images/profile.jpg" alt="profile"></li>
           </ul>
         </div>
 

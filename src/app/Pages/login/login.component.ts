@@ -1,48 +1,64 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthService } from 'src/app/shared/auth.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { AuthComponent } from 'src/app/auth/auth.component';
+import { AuthResponseData, AuthService } from 'src/app/auth/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-  ngOnInit(): void {
-  }
+export class LoginComponent {
+  constructor(private mode:AuthComponent,
+              private authService: AuthService,
+              private router: Router){}
+  visible:boolean = true;
+  changetype:boolean = true;
+  error = this.mode.error;
 
-  submit(event:Event, form: NgForm) {
-    event.preventDefault();
-    console.log(form.value)
-  }
   viewPass(){
     this.visible = !this.visible;
     this.changetype = !this.changetype;
   }
 
-  visible:boolean = true;
-  changetype:boolean = true;
-
-
-  email:string = '';
-  password:string = '';
-
-
-  constructor(private auth: AuthService){}
-
-  login() {
-    if(this.email == ''){
-      alert('Please fill all fields')
-      return;
-    }
-    if(this.password == ''){
-      alert('Please fill all fields')
-      return;
-    }
-
-    this.auth.login(this.email,this.password);
-    this.email = '';
-    this.password = '';
+  switchMode() {
+    this.mode.isLoginMode = !this.mode.isLoginMode
   }
 
+  submit(registerForm:NgForm) {
+    const email = registerForm.value.email;
+    const password = registerForm.value.password;
+    const username = registerForm.value.username;
+    const adminEmail = 'admin@gmail.com';
+    const adminPass = 'ADMINISTRATOR1';
+
+    let authObs: Observable<AuthResponseData>;
+    this.mode.isLoading = true;
+
+    if (this.mode.isLoginMode) {
+     authObs = this.authService.login(email, password);
+    } else {
+     authObs = this.authService.signup(email, password)
+    }
+
+  authObs.subscribe({
+    next: (resData:any) => {
+      console.log(resData);
+      this.router.navigate(['/home']);
+      if(registerForm.value.email === adminEmail && registerForm.value.password === adminPass){
+        this.router.navigate(['/admin84758472429']);
+      };
+     sessionStorage.setItem('loggedUser', username)
+     },
+     error: (errorMessage:any) => {
+      this.error = errorMessage;
+      console.log(errorMessage);
+      this.mode.isLoading = false;
+     }
+   })
+  }
 
 }

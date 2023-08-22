@@ -1,5 +1,14 @@
-<div class="container-fluid">
-  <form (submit)="submit($event, registerForm)" #registerForm="ngForm" (ngSubmit)="registerForm.reset();customRegistration()">
+<div class="container-fluid" *ngIf="!isLoginMode">
+
+    <div class="col-xs-6 text-center bg-dark text-danger" *ngIf="error">
+        <p >{{ error }}</p>
+    </div>
+
+  <div class="container d-flex align-items-center justify-content-center" *ngIf="isLoading" style="height: 600px;">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm, registerForm.value)" *ngIf="!isLoading">
     <div class="container">
       <div class="forIam">
         <label for="category">author/investor</label> <br>
@@ -18,34 +27,22 @@
          <option value="{{country.code}}" *ngFor="let country of IamFrom">{{country.name}}</option>
       </select>
       <p class="countryValidation text-danger" *ngIf="!country.valid && country.touched">Required</p>
-      </div><br>
-
-      <div class="forFirstname">
-        <label for="firstname">Username</label><br>
-           <input type="text" name="username" id="username" ngModel #username="ngModel" required>
-           <p class="firstnameValidation text-danger" *ngIf="!username.valid && username.touched">Required</p>
       </div>
    <br>
 
   <div class="forEmail">
     <label for="email">Email</label><br>
-  <input type="text" name="email" id="email" [(ngModel)]="email" required><br><br>
-  <!-- <p class="emailValidation text-danger" *ngIf="!email.valid && email.touched">Required</p> -->
+  <input type="text" name="email" id="email" ngModel="email" #email="ngModel" required><br><br>
+  <p class="emailValidation text-danger" *ngIf="!email.valid && email.touched">Required</p>
   </div>
 
   <div class="forPassword">
     <label for="password">password</label><br>
-  <input [type]="changetype?'password':'text'" name="password" id="password" [(ngModel)]="password" required minlength="7"><br><br>
+  <input [type]="changetype?'password':'text'" name="password" id="password" ngModel="password" #password="ngModel" required minlength="7"><br><br>
   <span class="eyeicon" (click)="viewPass()"><i [ngClass]="visible?'bi bi-eye-slash':'bi bi-eye'"></i></span>
-  <!-- <p class="passwordValidation text-danger" *ngIf="!password.valid && password.touched" >Required</p>
-  <p class="passwordValidation2 text-danger" *ngIf="password.errors?.['minlength']">Min-length should be 4</p> -->
+  <p class="emailValidation text-danger" *ngIf="!password.valid && password.touched">Required</p>
   </div>
 
-  <!-- <div class="forDate">
-    <label for="date">Date of birth</label><br>
-  <input type="date" name="date" id="date" ngModel #date="ngModel" required ><br>
-  <p class="dateValidation text-danger" *ngIf="!date.valid && date.touched">Required</p>
-  </div> -->
 
   <hr class="new1">
 
@@ -54,10 +51,14 @@
      <label for="agree" class="btn btn-secondary">I agree terms &<br> conditions(click)</label>
   </div><br><br>
 
-     <input type="submit" value="Register" routerLink="../login" (click)="register();" [disabled]="!registerForm.valid">
+  <div class="buttons">
+  <button type="submit" class="submit-btn" [disabled]="!registerForm.valid">Sign Up</button>
+  <button type="button" class="switching-btn" (click)="onSwitchMode()">Switch to login</button>
+  </div>
+
     </div>
   </form>
-
 </div>
 
 
+<app-login *ngIf="isLoginMode"></app-login>

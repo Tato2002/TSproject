@@ -1,6 +1,4 @@
-/* .btn-secondary {
-  display: none;
-} */
+
 .CardIdea {
   margin: auto;
   margin-top: 150px;
@@ -117,7 +115,6 @@
         background-image: url('https://static.vecteezy.com/system/resources/thumbnails/006/789/451/small/abstract-black-friday-wallpaper-luxury-background-template-color-art-template-business-dark-vector.jpg');
         padding: 10px;
         background-size: cover;
-        /* background-color: rgba(153, 68, 232, 0.234); */
       }
       .CardIdea2 .flex article .text p {
         width: fit-content;

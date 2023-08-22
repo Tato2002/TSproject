@@ -25,45 +25,43 @@ export class Admin84758472429Component implements OnInit{
     setTimeout(() => { this.ngOnInit() }, 1000)
   }
 
-  constructor(public http1:HttpClient, public sharedService:SHAREDService){}
+  constructor(public http:HttpClient, public sharedService:SHAREDService){}
 
   ideaAdded(idea: Admin){
-    // console.log(idea);
-    this.http1.post(this.fireBase, idea)
+
+    this.http.post(this.fireBase, idea)
     .subscribe((_response) => {
-      // console.log(response)
+
     })
   }
 
-
   getAllIdeas(){
-    this.http1.get<{[key: string]: Admin}>(this.fireBase)
-    .pipe(map((res) => {
-      const ideas = []
-        for (const key in res) {
-            let idea: Admin = {
-              IName: res[key].IName,
-              IDesc: res[key].IDesc,
-              id: key
-            }
-            ideas.push(idea)
+    return this.http.get<{[key: string]: Admin}>(this.fireBase)
+  .pipe(
+  map((res) => {
+    const ideas = []
+      for (const key in res) {
+          let idea: Admin = {
+            IName: res[key].IName,
+            IDesc: res[key].IDesc,
+            id: key
           }
-          return ideas;
-        })).subscribe((response) => {
-          // console.log(response);
-          this.ideas = response;
-        })
-
-  }
+          ideas.push(idea)
+        }
+        return ideas;
+      })).subscribe((response) => {
+        this.ideas = response;
+      })
+ }
 
   onIdeaDelete(ideaId: any) {
-    this.http1.delete(this.DeleteUrl + ideaId + ".json").subscribe()
+    this.http.delete(this.DeleteUrl + ideaId + ".json").subscribe()
   }
 
   onIdeaApprove(idea: Admin){
-    this.http1.post(this.firebaseApproved, idea)
+    this.http.post(this.firebaseApproved, idea)
     .subscribe((_response) => {
-      // console.log(response)
+
     })
     this.sharedService.sendIdeaApprove();
   }

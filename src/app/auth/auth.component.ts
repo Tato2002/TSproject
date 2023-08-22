@@ -1,32 +1,74 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Injectable } from '@angular/core';
-import { AuthService } from 'src/app/shared/auth.service';
-import { IdeaCustomReg } from './MODELS/customReg';
-import { HttpClient } from '@angular/common/http';
-import {SHAREDService} from './../shared.service';
-import { map } from 'rxjs';
+import { NgForm } from "@angular/forms";
+import { Component } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Router } from "@angular/router";
+
+import { AuthResponseData, AuthService } from "./auth.service";
+import { IdeaCustomReg } from "./MODELS/customReg";
+
+
+
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css'],
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
-@Injectable()
-export class RegistrationComponent implements OnInit {
+export class AuthComponent {
 
-  firebaseCustomReg = 'https://idea-42fac-default-rtdb.europe-west1.firebasedatabase.app/CstmRegistr.json';
+  firebaseCustomReg = 'https://idea-custom-reg-default-rtdb.europe-west1.firebasedatabase.app/USERS.json';
+  constructor(private http:HttpClient,
+              private authService: AuthService,
+              private router: Router){}
+  isLoginMode = true;
+  isLoading = false;
+  error: string = null;
+  custom:IdeaCustomReg[] = []
+  AgreeTermsConditions = false;
+  visible:boolean = true;
+  changetype:boolean = true;
 
+  onSwitchMode() {
+    this.isLoginMode = !this.isLoginMode;
 
-ngOnInit(): void {
-  // this.getAllUsers()
-  setTimeout(() => { this.ngOnInit() }, 1000)
-}
-constructor(private auth: AuthService, private http:HttpClient){}
+  }
 
+  viewPass(){
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
+  }
 
+   onSubmit(registerForm:NgForm, custom: IdeaCustomReg) {
+    const email = registerForm.value.email;
+    const password = registerForm.value.password;
 
+    let authObs: Observable<AuthResponseData>;
+    this.isLoading = true;
 
+    if (this.isLoginMode) {
+     authObs = this.authService.login(email, password);
+    } else {
+     authObs = this.authService.signup(email, password)
+    }
+
+  authObs.subscribe({
+     next: (resData:any) => {
+      console.log(resData);
+      this.router.navigate(['/home']);
+     },
+     error: (errorMessage:any) => {
+      this.error = errorMessage;
+      console.log(errorMessage);
+      this.isLoading = false;
+     }
+   })
+
+         this.http.post(this.firebaseCustomReg, custom)
+           .subscribe((_response) => {
+       })
+       registerForm.reset();
+  }
 
       IamFrom = [
         {name: 'Afghanistan', code: 'AF'},
@@ -273,78 +315,4 @@ constructor(private auth: AuthService, private http:HttpClient){}
         {name: 'Zambia', code: 'ZM'},
         {name: 'Zimbabwe', code: 'ZW'}
       ]
-
-
-      submit(event:Event, form: NgForm) {
-        event.preventDefault();
-        console.log(form.value)
-      }
-
-      email:string = '';
-      password:string = '';
-
-      register() {
-        // this.customRegistration(this.ideas)
-        if(this.email == ''){
-          alert('Please enter email')
-          return;
-        }
-        if(this.password == ''){
-          alert('Please enter password')
-          return;
-        }
-
-        this.auth.register(this.email,this.password);
-         this.email = '';
-         this.password = '';
-      }
-
-
-    AgreeTermsConditions = false;
-
-
-      viewPass(){
-        this.visible = !this.visible;
-        this.changetype = !this.changetype;
-      }
-
-      visible:boolean = true;
-      changetype:boolean = true;
-
-
-     // fireBase = 'https://idea-custom-reg-default-rtdb.europe-west1.firebasedatabase.app/Ideas.json';
-      ideas:IdeaCustomReg[] = []
-
-
-customRegistration(){
-  this.http.post(this.firebaseCustomReg, this.ideas)
-  .subscribe((_response) => {
-  })
 }
-
-
-
-// customRegistration(custom: IdeaCustomReg){
-//   //this.http.get<{[key: string]: IdeaCustomReg}>(this.firebaseCustomReg)
-//   this.http.post(this.firebaseCustomReg, custom)
-//   .pipe(map((res) => {
-//     const ideas = []
-//       for (const key in res) {
-//           let idea: IdeaCustomReg = {
-//             username: res[key].username,
-//             country: res[key].country,
-//             email:res[key].email,
-//             password:res[key].password,
-//             category:res[key].category,
-//             agree:res[key].agree
-//           }
-//           ideas.push(idea)
-//         }
-//         return ideas;
-//       })).subscribe((response) => {
-//         // console.log(response);
-//         this.ideas = response;
-//       })
-
-// }
-    }

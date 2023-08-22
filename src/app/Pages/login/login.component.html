@@ -1,21 +1,25 @@
 <div class="container-fluid">
-  <form (submit)="submit($event, submitInfo)" #submitInfo="ngForm">
+  <div class="col-xs-6 text-center bg-dark text-danger" *ngIf="error">
+    <p >{{ error }}</p>
+</div>
+  <form (ngSubmit)="submit(submitInfo)" #submitInfo="ngForm">
+    <label for="username">OneTime Username</label><br>
+      <input type="text" name="username" id="username" placeholder="XX_749-striker" ngModel><br><br>
 
     <label for="email">Email</label><br>
-      <input type="text" name="email" id="email" placeholder="IdeaPlatform0@gmail.com" [(ngModel)]="email"><br><br>
+      <input type="text" name="email" id="email" placeholder="IdeaPlatform0@gmail.com" ngModel><br><br>
 
      <div class="forPass">
       <label for="password">Password</label><br>
-      <input [type]="changetype?'password':'text'" id="password" placeholder="dg************32!" name="password" [(ngModel)]="password"><br><br>
+      <input [type]="changetype?'password':'text'" id="password" placeholder="dg************32!" name="password" ngModel><br><br>
       <span class="eyeicon" (click)="viewPass()"><i [ngClass]="visible?'bi bi-eye-slash':'bi bi-eye'"></i></span>
      </div>
 
 
-      <input type="submit" (click)="login()" value="Log In">
+      <input type="submit" value="Log In">
 
       <div class="mt-3">
-        <a routerLink="../registration" class="text-warning">Not registered yet? <span class="text-success">Register</span></a><br>
-        <!-- <a class="text-primary">Forgot Password?</a> -->
+        <a class="text-warning">Not registered yet? <span class="text-success" (click)="switchMode()">Register</span></a><br>
       </div>
   </form>
 </div>

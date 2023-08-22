@@ -62,6 +62,7 @@ footer h1 img {
 @media only screen and (max-width:359px){
   .pgmail{
     font-size: 12px;
+    overflow: hidden;
   }
 }
 
@@ -78,6 +79,11 @@ footer h1 img {
     width: 100%;
   }
 }
+
+.pgmail img {
+  background: white;
+  border-radius: 4px;
+}
 .githubRelative {
   position: relative;
   text-decoration: none;
@@ -90,8 +96,8 @@ footer h1 img {
   left: -39px;
   top: -10px;
   background: white;
-  border-radius: 50%;
-  width: 35px;
+  border-radius: 4px;
+ padding-right: 1px;
 }
 
 .linkedinRelative {
@@ -106,6 +112,7 @@ footer h1 img {
   left: -39px;
   top: -8px;
   background: white;
+  border: 1px solid white;
   border-radius: 4px;
   width: 35px;
 }

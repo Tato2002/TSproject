@@ -1,7 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 .container-fluid {
-  background-image: url('https://static.wixstatic.com/media/fe4a5d_231f0b4d187d4684a7f5cc559262b6ca~mv2.gif');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -78,5 +77,9 @@ input[type="submit"]:hover {
   right: 42px;
     top: 44px;
   color: black;
+ }
+
+ div a {
+  cursor: pointer;
  }
 

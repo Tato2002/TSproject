@@ -1,8 +1,7 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Idea } from './MODELS/Idea';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
 
 
 @Component({
@@ -10,20 +9,11 @@ import { map } from 'rxjs';
   templateUrl: './share-own-idea.component.html',
   styleUrls: ['./share-own-idea.component.css']
 })
-export class ShareOwnIdeaComponent implements OnInit {
-
-img:string = "https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-light-bulb-icon-vector--light-bulb-ideas-symbol-illustration-png-image_1694700.jpg";
+export class ShareOwnIdeaComponent {
 
 fireBase = 'https://idea-42fac-default-rtdb.europe-west1.firebasedatabase.app/Ideas.json';
-DeleteUrl = 'https://idea-42fac-default-rtdb.europe-west1.firebasedatabase.app/Ideas/';
 ideas:Idea[] = []
 
-
-
-ngOnInit():void {
- // this.getAllIdeas()
-  setTimeout(() => { this.ngOnInit() }, 0.5)
-}
 
 constructor(private http:HttpClient){}
 
@@ -32,5 +22,7 @@ ideaSend(idea: Idea){
   .subscribe((_response) => {
 })
 }
-
+adminAlert() {
+  alert('To see your idea, you should approve it from ADMIN page: \n email: admin@gmail.com\n password: ADMINISTRATOR1')
+}
 }
