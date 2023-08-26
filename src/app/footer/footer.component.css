@@ -59,7 +59,7 @@ footer h1 img {
 .rights {
   color: rgba(255, 255, 255, 0.608);
 }
-@media only screen and (max-width:359px){
+@media only screen and (max-width:412px){
   .pgmail{
     font-size: 12px;
     overflow: hidden;
