@@ -12,16 +12,16 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
+    {path: 'auth', component:AuthComponent},
+  {path:'', redirectTo:'auth', pathMatch:'full'},
   {path:'top-ideas', component:TopIdeasComponent, canActivate: [AuthGuard]},
   {path:'common-ideas', component:CommonIdeasComponent, canActivate: [AuthGuard]},
   {path:'admin84758472429', component:Admin84758472429Component, canActivate: [AuthGuard]},
-  {path:'', redirectTo:'auth', pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'more', component:MoreComponent},
   {path:'profile', component:ProfileComponent, canActivate: [AuthGuard]},
-  {path:'share-own-idea', component:ShareOwnIdeaComponent, canActivate: [AuthGuard]},
-  {path: 'auth', component:AuthComponent}
+  {path:'share-own-idea', component:ShareOwnIdeaComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

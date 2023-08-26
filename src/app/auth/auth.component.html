@@ -32,13 +32,13 @@
 
   <div class="forEmail">
     <label for="email">Email</label><br>
-  <input type="text" name="email" id="email" ngModel="email" #email="ngModel" required><br><br>
+  <input type="text" name="email" id="email" ngModel #email="ngModel" required><br><br>
   <p class="emailValidation text-danger" *ngIf="!email.valid && email.touched">Required</p>
   </div>
 
   <div class="forPassword">
     <label for="password">password</label><br>
-  <input [type]="changetype?'password':'text'" name="password" id="password" ngModel="password" #password="ngModel" required minlength="7"><br><br>
+  <input [type]="changetype?'password':'text'" name="password" id="password" ngModel #password="ngModel" required minlength="7"><br><br>
   <span class="eyeicon" (click)="viewPass()"><i [ngClass]="visible?'bi bi-eye-slash':'bi bi-eye'"></i></span>
   <p class="emailValidation text-danger" *ngIf="!password.valid && password.touched">Required</p>
   </div>
