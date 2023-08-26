@@ -4,14 +4,14 @@
 </div>
   <form (ngSubmit)="submit(submitInfo)" #submitInfo="ngForm">
     <label for="username">OneTime Username</label><br>
-      <input type="text" name="username" id="username" placeholder="XX_749-striker" ngModel><br><br>
+      <input type="text" name="username" id="username" ngModel><br><br>
 
     <label for="email">Email</label><br>
-      <input type="text" name="email" id="email" placeholder="IdeaPlatform0@gmail.com" ngModel><br><br>
+      <input type="text" name="email" id="email" ngModel><br><br>
 
      <div class="forPass">
       <label for="password">Password</label><br>
-      <input [type]="changetype?'password':'text'" id="password" placeholder="dg************32!" name="password" ngModel><br><br>
+      <input [type]="changetype?'password':'text'" id="password" name="password" ngModel><br><br>
       <span class="eyeicon" (click)="viewPass()"><i [ngClass]="visible?'bi bi-eye-slash':'bi bi-eye'"></i></span>
      </div>
 
